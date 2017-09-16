@@ -177,6 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //xxl 1 add the AdminServiceProvider
+        Encore\Admin\Providers\AdminServiceProvider::class
+
     ],
 
     /*
