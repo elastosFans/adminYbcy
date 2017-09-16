@@ -1,160 +1,51 @@
-laravel-admin
-=====
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-[![Build Status](https://travis-ci.org/z-song/laravel-admin.svg?branch=master)](https://travis-ci.org/z-song/laravel-admin)
-[![StyleCI](https://styleci.io/repos/48796179/shield)](https://styleci.io/repos/48796179)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/z-song/laravel-admin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/z-song/laravel-admin/?branch=master)
-[![Packagist](https://img.shields.io/packagist/l/encore/laravel-admin.svg?maxAge=2592000)](https://packagist.org/packages/encore/laravel-admin)
-[![Total Downloads](https://img.shields.io/packagist/dt/encore/laravel-admin.svg?style=flat-square)](https://packagist.org/packages/encore/laravel-admin)
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-`laravel-admin` is administrative interface builder for laravel which can help you build CRUD backends just with few lines of code.
+## About Laravel
 
-[Demo](http://120.26.143.106/admin) use `username/password:admin/admin`
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-Inspired by [SleepingOwlAdmin](https://github.com/sleeping-owl/admin) and [rapyd-laravel](https://github.com/zofe/rapyd-laravel).
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-[中文文档](/docs/zh/README.md)
+Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-Screenshots
-------------
+## Learning Laravel
 
-![laravel-admin](https://cloud.githubusercontent.com/assets/1479100/19625297/3b3deb64-9947-11e6-807c-cffa999004be.jpg)
+Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
-Installation
-------------
+If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
 
-First, install laravel, and make sure that the database connection settings are correct.
+## Laravel Sponsors
 
-```
-Laravel 5.2
-composer require encore/laravel-admin "dev-master"
+We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
 
-Laravel 5.3
-composer require encore/laravel-admin "1.3.x-dev"
+- **[Vehikl](http://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[British Software Development](https://www.britishsoftware.co)**
+- **[Styde](https://styde.net)**
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
 
-Laravel 5.1
-composer require encore/laravel-admin "1.1.x-dev"
-```
+## Contributing
 
-In`config/app.php`add`ServiceProvider`:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-```
-Encore\Admin\Providers\AdminServiceProvider::class
-```
+## Security Vulnerabilities
 
-Then run these commands to finnish install：
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-```
-php artisan vendor:publish --tag=laravel-admin
-php artisan admin:install
-```
+## License
 
-open `http://localhost/admin/` in browser,use username `admin` and password `admin` to login.
-
-Default Settings
-------------
-The file in `config/admin.php` contains an array of settings, you can find the default settings in there.
-
-Documentation
-------------
-
-- [quick start](/docs/en/quick-start.md)
-- [router](/docs/en/router.md)
-- [menu](/docs/en/menu.md)
-- [layout](/docs/en/layout.md)
-- [model-grid](/docs/en/model-grid.md)
-- [model-form](/docs/en/model-form.md)
-- [widgets](/docs/en/widgets/table.md)
-  - [table](/docs/en/widgets/table.md)
-  - [form](/docs/en/widgets/form.md)
-  - [box](/docs/en/widgets/box.md)
-  - [info-box](/docs/en/widgets/info-box.md)
-  - [tab](/docs/en/widgets/box.md)
-  - [carousel](/docs/en/widgets/carousel.md)
-  - [collapse](/docs/en/widgets/collapse.md)
-  - charts TODO
-- [RBAC](/docs/en/permission.md)
-
-Directory structure
-------------
-After install,you can find directory`app/Admin`,and then most of our develop work is under this directory.
-
-```
-
-app/Admin
-├── Controllers
-│   ├── ExampleController.php
-│   └── HomeController.php
-└── routes.php
-```
-
-`app/Admin/routes.php` is used to define routes，for more detail please read [routes](/docs/zh/router.md).
-
-The `app/Admin/Controllers` directory  is used to store all the controllers, The `HomeController.php` file under this directory is used to handle home request of admin,The `ExampleController.php` file is a controller example.
-
-Quick start
-------------
-
-We use `users` table come with `Laravel` for example,the structure of table is:
-```sql
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
-```
-And the model for this table is `App\User.php`
-
-You can follow these steps to setup `CURD` interfaces of table `users`:
-
-#### 1.add controller
-
-Use the following command to create a controller for `App\User` model
-
-```php
-php artisan admin:make UserController --model=App\\User
-```
-The above command will create the controller in `app/Admin/Controllers/UserController.php`.
-
-#### 2.add route
-
-Add a route in `app/Admin/routes.php`：
-```
-$router->resource('users', UserController::class);
-```
-
-#### 3.add left menu item
-
-Open `http://localhost:8000/admin/auth/menu`, add menu link and refresh the page, then you can find a link item in left menu bar.
-
-#### 4.build grid and form
-
-The rest needs to be done is open `app/Admin/Contollers/UserController.php`, find `form()` and `grid()` method and write few lines of code with `model-grid` and `model-form`，for more detail, please read [model-grid](/docs/en/model-grid.md) and [model-form](/docs/en/model-form.md).
-
-Other
-------------
-`laravel-admin` based on thses plugins or services:
-
-+ [Laravel](https://laravel.com/)
-+ [AdminLTE](https://almsaeedstudio.com/)
-+ [Bootstrap Markdown](http://toopay.github.io/bootstrap-markdown/)
-+ [Datetimepicker](http://eonasdan.github.io/bootstrap-datetimepicker/)
-+ [CodeMirror](https://codemirror.net/)
-+ [font-awesome](http://fontawesome.io)
-+ [moment](http://momentjs.com/)
-+ [Google map](https://www.google.com/maps)
-+ [Tencent map](http://lbs.qq.com/)
-+ [bootstrap-fileinput](https://github.com/kartik-v/bootstrap-fileinput)
-+ [jquery-pjax](https://github.com/defunkt/jquery-pjax)
-+ [Nestable](http://dbushell.github.io/Nestable/)
-+ [noty](http://ned.im/noty/)
-
-License
-------------
-`laravel-admin` is licensed under [The MIT License (MIT)](LICENSE).
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
